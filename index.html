@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <!-- <nav>
             <button id="sidebar-toggle-btn">☰</button>
             <div id="notification-icon">🔔</div>
             <div id="settings-dropdown-trigger">
@@ -21,7 +21,20 @@
                     <li>Logout</li>
                 </ul>
             </div>
-        </nav>
+        </nav> -->
+        <nav>
+        <button id="sidebar-toggle-btn">☰</button>
+        <div class="navbar-right">
+            <div id="notification-icon">🔔</div>
+            <div id="settings-dropdown-trigger">
+                ⚙️
+                <ul id="settings-dropdown-menu" style="display: none;">
+                    <li>Profile</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     </header>
 
     <nav id="sidebar">
@@ -45,8 +58,9 @@
 
         <section id="remaining-balance-section">
             <h2>Remaining Balance</h2>
-            <div class="balance-circle" id="hold-day-circle">
-                <p>Hold Day</p>
+            <div class="balance-circles-container"> <!-- NEW WRAPPER -->
+                <div class="balance-circle" id="hold-day-circle">
+                <p>Day</p>
                 <p>15</p>
             </div>
             <div class="balance-circle" id="hour-circle">
@@ -60,6 +74,7 @@
             <div class="balance-circle" id="second-circle">
                 <p>Second</p>
                 <p>45</p>
+            </div>
             </div>
         </section>
     </main>

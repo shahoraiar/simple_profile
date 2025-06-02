@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="sidebar-toggle-btn">☰</button>
+            <div id="notification-icon">🔔 Notifications</div>
+            <div id="settings-dropdown-trigger">
+                ⚙️ Settings
+                <ul id="settings-dropdown-menu" style="display: none;">
+                    <li>Profile</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Users</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="profile-section">
+            <img src="placeholder-profile.png" alt="Profile Image" style="width: 100px; height: 100px; border-radius: 50%;">
+            <div>
+                <p>Name: John Doe</p>
+                <p>Password: ••••••••</p>
+                <p>Status: Active</p>
+            </div>
+        </section>
+
+        <section id="remaining-balance-section">
+            <h2>Remaining Balance</h2>
+            <div class="balance-circle" id="hold-day-circle">
+                <p>Hold Day</p>
+                <p>15</p>
+            </div>
+            <div class="balance-circle" id="hour-circle">
+                <p>Hour</p>
+                <p>10</p>
+            </div>
+            <div class="balance-circle" id="minute-circle">
+                <p>Minute</p>
+                <p>30</p>
+            </div>
+            <div class="balance-circle" id="second-circle">
+                <p>Second</p>
+                <p>45</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -336,3 +336,63 @@ main {
         /* justify-content: center; */ /* No longer wrapping, so flex-start from base rule is fine */
     }
 }
+
+/* Card Section Styles */
+#card-section {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #e7e7e7;
+    border-radius: 8px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    width: 150px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-top {
+    height: 50%;
+    background-color: #6a11cb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-top button {
+    background-color: #ffffff;
+    color: #6a11cb;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-top button:hover {
+    background-color: #f0f0f0;
+}
+
+.card-bottom {
+    height: 50%;
+    background-color: #2575fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}

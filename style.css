@@ -176,8 +176,8 @@ main {
 }
 
 .balance-circle {
-    width: 50px; /* Increased size for better text fit */
-    height: 40px; /* Increased size for better text fit */
+    width: 60px; /* Increased size for better text fit */
+    height: 60px; /* Increased size for better text fit */
     border-radius: 50%;
     display: flex;
     flex-direction: column; /* Stack text vertically */
@@ -216,22 +216,22 @@ main {
 }
 
 #hold-day-circle {
-    border: 5px solid #ff6347; /* Tomato */
+    border: 9px solid #ff6347; /* Tomato */
     background-color: #ff634720; /* Light Tomato */
 }
 
 #hour-circle {
-    border: 5px solid #4682b4; /* SteelBlue */
+    border: 9px solid #4682b4; /* SteelBlue */
     background-color: #4682b420; /* Light SteelBlue */
 }
 
 #minute-circle {
-    border: 5px solid #32cd32; /* LimeGreen */
+    border: 9px solid #32cd32; /* LimeGreen */
     background-color: #32cd3220; /* Light LimeGreen */
 }
 
 #second-circle {
-    border: 5px solid #ffa500; /* Orange */
+    border: 9px solid #ffa500; /* Orange */
     background-color: #ffa50020; /* Light Orange */
 }
 
@@ -337,7 +337,7 @@ main {
 
 /* Card Section Styles */
 #card-section {
-    padding: 20px;
+    /* padding: 20px; */
     margin-bottom: 30px;
     border-radius: 8px;
 }
@@ -345,7 +345,7 @@ main {
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 17px;
     flex-wrap: wrap;
 }
 

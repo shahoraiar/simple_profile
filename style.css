@@ -134,14 +134,14 @@ main {
 #profile-section {
     text-align: center;
     margin-bottom: 30px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     background-color: #e7e7e7;
     border-radius: 8px;
 }
 
 #profile-section img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 5px;
     border: 3px solid #ddd;
@@ -155,7 +155,7 @@ main {
 
 /* Remaining Balance Section */
 #remaining-balance-section {
-    padding: 20px;
+    padding: 10px;
     background-color: #e7e7e7;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -164,7 +164,7 @@ main {
 
 #remaining-balance-section h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #remaining-balance-section > div { /* Direct div children of the section (now .balance-circles-container) */
@@ -177,15 +177,15 @@ main {
 
 .balance-circle {
     width: 50px; /* Increased size for better text fit */
-    height: 65px; /* Increased size for better text fit */
+    height: 40px; /* Increased size for better text fit */
     border-radius: 50%;
     display: flex;
     flex-direction: column; /* Stack text vertically */
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 10px; /* Add some space around circles */
-    padding: 20px; /* Add padding inside circles */
+    margin: 5px; /* Add some space around circles */
+    padding: 5px; /* Add padding inside circles */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow */
 }
 
@@ -201,37 +201,37 @@ main {
     display: flex;
     justify-content: center; /* Center items horizontally */
     flex-wrap: wrap; /* Wrap on smaller screens */
-    gap: 15px;
-    padding-bottom: 10px;
+    gap: 10px;
+    padding-bottom: 5px;
 }
 
 .balance-circle p {
     margin: 5px 0; /* Adjust spacing between text lines */
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .balance-circle p:last-child { /* Style the number/value */
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
 #hold-day-circle {
-    border: 10px solid #ff6347; /* Tomato */
+    border: 5px solid #ff6347; /* Tomato */
     background-color: #ff634720; /* Light Tomato */
 }
 
 #hour-circle {
-    border: 10px solid #4682b4; /* SteelBlue */
+    border: 5px solid #4682b4; /* SteelBlue */
     background-color: #4682b420; /* Light SteelBlue */
 }
 
 #minute-circle {
-    border: 10px solid #32cd32; /* LimeGreen */
+    border: 5px solid #32cd32; /* LimeGreen */
     background-color: #32cd3220; /* Light LimeGreen */
 }
 
 #second-circle {
-    border: 10px solid #ffa500; /* Orange */
+    border: 5px solid #ffa500; /* Orange */
     background-color: #ffa50020; /* Light Orange */
 }
 
@@ -339,7 +339,6 @@ main {
 #card-section {
     padding: 20px;
     margin-bottom: 30px;
-    background-color: #e7e7e7;
     border-radius: 8px;
 }
 
@@ -351,7 +350,7 @@ main {
 }
 
 .info-card {
-    width: 280px;
+    width: 32%;
     height: 100px;
     border: 1px solid #ccc;
     border-radius: 8px;

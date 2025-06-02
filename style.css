@@ -9,7 +9,9 @@ body {
 }
 
 header {
-  background-color: #5F7A8D;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+ /* background: linear-gradient(to right, #004080, #00aaff, #004080);  */
+
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -176,8 +178,8 @@ main {
 }
 
 .balance-circle {
-    width: 70px; /* Increased size for better text fit */
-    height: 70px; /* Increased size for better text fit */
+    width: 50px; /* Increased size for better text fit */
+    height: 65px; /* Increased size for better text fit */
     border-radius: 50%;
     display: flex;
     flex-direction: column; /* Stack text vertically */

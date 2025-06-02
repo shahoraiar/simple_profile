@@ -83,9 +83,17 @@ main {
 #notification-icon,
 #settings-dropdown-trigger {
     color: white;
-    margin-left: 20px;
     cursor: pointer;
     position: relative; /* For dropdown positioning */
+}
+
+#settings-dropdown-trigger {
+    margin-left: 20px;
+    /* margin-right has been removed */
+}
+
+#notification-icon {
+    margin-left: 20px;
 }
 
 #settings-dropdown-menu {
@@ -150,8 +158,9 @@ main {
 
 #remaining-balance-section > div { /* Direct div children of the section */
     display: flex;
-    justify-content: space-around; /* Distribute circles evenly */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: flex-start; /* Align items to the start for scrolling */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of direct children (helps with scrolling behavior) */
 }
 
 .balance-circle {
@@ -214,6 +223,6 @@ main {
     }
 
     #remaining-balance-section > div {
-        justify-content: center; /* Center circles when they wrap */
+        /* justify-content: center; */ /* No longer wrapping, so flex-start from base rule is fine */
     }
 }

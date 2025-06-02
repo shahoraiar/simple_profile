@@ -305,6 +305,18 @@ main {
     font-weight: bold;
 }
 
+/* Card Main Section */
+#card-main .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.custom-dashboard-btn-1 {
+    border-radius: 10px;
+}
+
 /* Basic Responsiveness */
 @media (max-width: 768px) {
     main {

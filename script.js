@@ -94,4 +94,119 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Balance circle elements not found.");
     }
+
+    // --- Initialize Sidebar State ---
+    const initializeSidebarState = () => {
+        if (sidebar && mainContent) { // Ensure elements exist
+            if (window.innerWidth <= 768) {
+                sidebar.classList.add('sidebar-hidden');
+                mainContent.style.marginLeft = '0px';
+            } else {
+                // Only remove sidebar-hidden if it was not explicitly closed by user toggle
+                // The toggle button's state is the source of truth for user interaction.
+                // If user hid it on large screen, resizing to small then large should keep it hidden.
+                // However, the requirement is to show it if > 768px, unless toggle overrides.
+                // For simplicity matching req: if > 768, ensure it's shown unless toggle has hidden it.
+                // The problem implies initializeSidebarState can override toggle state on resize.
+                sidebar.classList.remove('sidebar-hidden');
+                mainContent.style.marginLeft = sidebarWidth;
+            }
+        }
+    };
+
+    // Call on load
+    initializeSidebarState();
+
+    // Call on resize
+    window.addEventListener('resize', initializeSidebarState);
+
+    // --- Data Table and Pagination ---
+    const tableBody = document.getElementById('data-table-body');
+    const prevButton = document.getElementById('prev-page-btn');
+    const nextButton = document.getElementById('next-page-btn');
+    const currentPageSpan = document.getElementById('current-page-span');
+
+    if (tableBody && prevButton && nextButton && currentPageSpan) {
+        const sampleData = [];
+        for (let i = 1; i <= 35; i++) { // Create 35 sample items
+            sampleData.push({
+                id: i,
+                name: `Item ${i}`,
+                value: Math.floor(Math.random() * 1000),
+                status: ['Active', 'Inactive', 'Pending'][Math.floor(Math.random() * 3)]
+            });
+        }
+
+        let currentPage = 1;
+        const rowsPerPage = 10;
+
+        function renderTable() {
+            if (!tableBody || !prevButton || !nextButton || !currentPageSpan) {
+                console.error("Table rendering elements missing in renderTable scope.");
+                return;
+            }
+
+            // 1. Clear Existing Rows
+            tableBody.innerHTML = '';
+
+            // 2. Calculate Data Slice
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedData = sampleData.slice(start, end);
+
+            // 3. Populate Table Rows
+            paginatedData.forEach(item => {
+                const row = document.createElement('tr');
+
+                const idCell = document.createElement('td');
+                idCell.textContent = item.id;
+                row.appendChild(idCell);
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = item.name;
+                row.appendChild(nameCell);
+
+                const valueCell = document.createElement('td');
+                valueCell.textContent = item.value;
+                row.appendChild(valueCell);
+
+                const statusCell = document.createElement('td');
+                statusCell.textContent = item.status;
+                row.appendChild(statusCell);
+
+                tableBody.appendChild(row);
+            });
+
+            // 4. Update Pagination Button States
+            const totalPages = Math.ceil(sampleData.length / rowsPerPage);
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === totalPages;
+
+            // 5. Update Current Page Display
+            currentPageSpan.textContent = `Page: ${currentPage} of ${totalPages}`;
+            
+            // console.log('renderTable called for page:', currentPage, 'Total items:', sampleData.length, 'Total pages:', totalPages);
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            // Check if there's a next page
+            const maxPage = Math.ceil(sampleData.length / rowsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                renderTable();
+            }
+        });
+
+        // Initial render
+        renderTable();
+    } else {
+        console.error("Data table or pagination elements not found.");
+    }
 });

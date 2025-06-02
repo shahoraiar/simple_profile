@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #004080; /* Standard deep blue */
+ background: linear-gradient(to right, #004080, #036b9f, #004080); /* Blue gradient blend */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -230,6 +230,74 @@ main {
 #second-circle {
     border: 10px solid #ffa500; /* Orange */
     background-color: #ffa50020; /* Light Orange */
+}
+
+/* Data Table Section */
+#data-table-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #e7e7e7; /* Consistent with other sections */
+    border-radius: 8px;
+}
+
+#data-table-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#data-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+#data-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+#data-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Pagination Controls */
+#pagination-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pagination-controls button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #5F7A8D; /* Navbar color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#pagination-controls button:hover:not(:disabled) {
+    background-color: #4A6572; /* Darker shade for hover */
+}
+
+#pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#current-page-span {
+    margin: 0 10px;
+    font-weight: bold;
 }
 
 /* Basic Responsiveness */

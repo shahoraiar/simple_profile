@@ -157,11 +157,9 @@ main {
     padding: 20px;
     background-color: #e7e7e7;
     border-radius: 8px;
-    height: 75vh;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transform: scaleY(0.75);
+    transform-origin: top center;
+    overflow: hidden;
 }
 
 #remaining-balance-section h2 {

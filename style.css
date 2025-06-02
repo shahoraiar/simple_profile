@@ -1,0 +1,219 @@
+/* Basic Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fix header to top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header nav { /* Target the nav inside header */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+nav#sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding-top: 60px; /* Adjust for fixed header */
+    position: fixed;
+    left: 0;
+    top: 0; /* Align with top of viewport */
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+nav#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav#sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav#sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+.sidebar-hidden {
+    transform: translateX(-100%);
+}
+
+main {
+    margin-left: 250px; /* Accommodate sidebar */
+    padding: 20px;
+    padding-top: 80px; /* Adjust for fixed header */
+    flex-grow: 1; /* Allow main content to take remaining space */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Navbar Elements */
+#sidebar-toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#notification-icon,
+#settings-dropdown-trigger {
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative; /* For dropdown positioning */
+}
+
+#settings-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: 100%; /* Position below the trigger */
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1001; /* Ensure dropdown is above other content */
+}
+
+#settings-dropdown-menu li {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#settings-dropdown-menu li:hover {
+    background-color: #555;
+}
+
+/* Profile Section */
+#profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#profile-section img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ddd;
+}
+
+#profile-section div p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Remaining Balance Section */
+#remaining-balance-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#remaining-balance-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#remaining-balance-section > div { /* Direct div children of the section */
+    display: flex;
+    justify-content: space-around; /* Distribute circles evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.balance-circle {
+    width: 120px; /* Increased size for better text fit */
+    height: 120px; /* Increased size for better text fit */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px; /* Add some space around circles */
+    padding: 10px; /* Add padding inside circles */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow */
+}
+
+.balance-circle p {
+    margin: 5px 0; /* Adjust spacing between text lines */
+    font-size: 0.9em;
+}
+
+.balance-circle p:last-child { /* Style the number/value */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#hold-day-circle {
+    border: 3px solid #ff6347; /* Tomato */
+    background-color: #ff634720; /* Light Tomato */
+}
+
+#hour-circle {
+    border: 3px solid #4682b4; /* SteelBlue */
+    background-color: #4682b420; /* Light SteelBlue */
+}
+
+#minute-circle {
+    border: 3px solid #32cd32; /* LimeGreen */
+    background-color: #32cd3220; /* Light LimeGreen */
+}
+
+#second-circle {
+    border: 3px solid #ffa500; /* Orange */
+    background-color: #ffa50020; /* Light Orange */
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0; /* Remove margin when sidebar can be hidden */
+    }
+
+    /* Adjust balance circles for smaller screens if needed */
+    .balance-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .balance-circle p:last-child {
+        font-size: 1.2em;
+    }
+
+    #remaining-balance-section > div {
+        justify-content: center; /* Center circles when they wrap */
+    }
+}

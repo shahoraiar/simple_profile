@@ -19,7 +19,7 @@ nav {
     opacity: 1 !important; /* Ensure it's fully opaque */
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
-    min-height: 100vh;
+    /* min-height: 100vh; Removed for natural height in flex row */
     padding: 20px 15px;
 }
 
@@ -154,8 +154,8 @@ nav {
 @media (min-width: 768px) { /* For desktop/tablet landscape view */
     #sidebar {
         position: static; /* Revert to normal flow */
-        height: auto; /* Revert height, min-height:100vh from base is fine */
-        width: auto; /* Let Bootstrap columns handle width */
+        height: auto; /* Allows content or flexbox to determine height */
+        width: auto !important; /* Force Bootstrap column width */
         transform: none; /* No translation */
         display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */

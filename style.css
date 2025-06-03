@@ -49,6 +49,10 @@ nav {
     cursor: pointer;
 }
 
+#easy-isp-title .hamburger-icon {
+    margin-left: 10px; /* Adjust this value as needed for desired spacing */
+}
+
 .countdown-circle-value {
     font-size: 1.5rem; /* Make them larger */
     font-weight: bold; /* Make them bolder */
@@ -104,5 +108,58 @@ nav {
     }
     nav {
         padding: 10px 15px; /* Reduce padding slightly */
+    }
+}
+
+@media (max-width: 767.98px) { /* For mobile/tablet portrait view */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px; /* Or your desired width for mobile sidebar */
+        z-index: 1040; /* Higher than navbar (usually 1030) or main content */
+
+        /* background-color: #f8f9fa; already in base #sidebar */
+        /* opacity: 1; already in base #sidebar */
+
+        transform: translateX(-100%); /* Initially off-screen to the left */
+        transition: transform 0.3s ease-in-out;
+
+        /* padding: 20px 15px; already in base #sidebar */
+
+        display: block !important;
+    }
+
+    #sidebar.sidebar-mobile-visible {
+        transform: translateX(0%); /* Slide into view */
+    }
+
+    body.sidebar-overlay-active::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1039; /* Below sidebar, above content */
+    }
+}
+
+@media (min-width: 768px) { /* For desktop/tablet landscape view */
+    #sidebar {
+        position: static; /* Revert to normal flow */
+        height: auto; /* Revert height, min-height:100vh from base is fine */
+        width: auto; /* Let Bootstrap columns handle width */
+        transform: none; /* No translation */
+        /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
+
+        /* display: block; Default for non-d-none, no !important needed here */
+    }
+
+    /* Ensure mobile-specific visibility class doesn't affect desktop */
+    #sidebar.sidebar-mobile-visible {
+        transform: none; /* No translation needed for desktop */
     }
 }

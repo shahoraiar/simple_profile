@@ -8,7 +8,9 @@ body {
 nav {
     background: linear-gradient(90deg, #007bff, #00bfff);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Default padding */
+    position: relative; /* Needed for z-index to take effect */
+    z-index: 1045;      /* Higher than mobile sidebar (1040) and backdrop (1039) */
 }
 
 #sidebar {
@@ -153,9 +155,8 @@ nav {
         height: auto; /* Revert height, min-height:100vh from base is fine */
         width: auto; /* Let Bootstrap columns handle width */
         transform: none; /* No translation */
+        display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
-
-        /* display: block; Default for non-d-none, no !important needed here */
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

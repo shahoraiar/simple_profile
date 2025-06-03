@@ -40,12 +40,12 @@
             // Adjust mainContent width
             if (sidebar.classList.contains('d-none')) {
                 // Sidebar is hidden
-                mainContent.classList.remove('col-md-10');
+                mainContent.classList.remove('col-md-9'); // Updated
                 mainContent.classList.add('col-md-12');
             } else {
                 // Sidebar is visible
                 mainContent.classList.remove('col-md-12');
-                mainContent.classList.add('col-md-10');
+                mainContent.classList.add('col-md-9'); // Updated
             }
         }
     });
@@ -100,7 +100,7 @@
                 body.classList.remove('sidebar-overlay-active');
 
                 // Ensure mainContent is not constrained by desktop sidebar column class
-                 mainContent.classList.remove('col-md-10');
+                 mainContent.classList.remove('col-md-9'); // Updated
                  mainContent.classList.add('col-md-12');
 
             } else {
@@ -112,12 +112,12 @@
                 // 2. Restore desktop layout based on the sidebar's d-none state
                 if (sidebar.classList.contains('d-none')) {
                     // Sidebar should be hidden on desktop
-                    mainContent.classList.remove('col-md-10');
+                    mainContent.classList.remove('col-md-9'); // Updated
                     mainContent.classList.add('col-md-12');
                 } else {
                     // Sidebar should be visible on desktop
                     mainContent.classList.remove('col-md-12');
-                    mainContent.classList.add('col-md-10');
+                    mainContent.classList.add('col-md-9'); // Updated
                 }
             }
         }
@@ -125,3 +125,17 @@
         // Update the view state for the next resize event
         isMobileView = newIsMobileView;
     });
+
+document.body.addEventListener('click', function(event) {
+    const body = document.body;
+    const sidebar = document.getElementById('sidebar');
+
+    // Check if the sidebar overlay is active and the click was directly on the body
+    // (which acts as the backdrop receiver due to the ::before pseudo-element styling)
+    if (body.classList.contains('sidebar-overlay-active') && event.target === body) {
+        if (sidebar) { // Ensure sidebar element exists
+            sidebar.classList.remove('sidebar-mobile-visible');
+        }
+        body.classList.remove('sidebar-overlay-active');
+    }
+});

@@ -8,14 +8,14 @@
 
         if (window.innerWidth < mdBreakpoint) {
             // Mobile View: Toggle overlay sidebar
-
+            
             // Ensure d-none is removed if we are trying to show the mobile overlay,
             // as d-none would prevent transform-based visibility.
             // The CSS for mobile #sidebar already has display: block !important to help.
             if (sidebar.classList.contains('d-none')) {
                 sidebar.classList.remove('d-none');
             }
-
+            
             sidebar.classList.toggle('sidebar-mobile-visible');
             body.classList.toggle('sidebar-overlay-active');
 
@@ -40,12 +40,12 @@
             // Adjust mainContent width
             if (sidebar.classList.contains('d-none')) {
                 // Sidebar is hidden
-                mainContent.classList.remove('col-md-9'); // Updated
+                mainContent.classList.remove('col-md-8'); 
                 mainContent.classList.add('col-md-12');
             } else {
                 // Sidebar is visible
                 mainContent.classList.remove('col-md-12');
-                mainContent.classList.add('col-md-9'); // Updated
+                mainContent.classList.add('col-md-8'); 
             }
         }
     });
@@ -100,7 +100,7 @@
                 body.classList.remove('sidebar-overlay-active');
 
                 // Ensure mainContent is not constrained by desktop sidebar column class
-                 mainContent.classList.remove('col-md-9'); // Updated
+                 mainContent.classList.remove('col-md-8'); 
                  mainContent.classList.add('col-md-12');
 
             } else {
@@ -112,12 +112,12 @@
                 // 2. Restore desktop layout based on the sidebar's d-none state
                 if (sidebar.classList.contains('d-none')) {
                     // Sidebar should be hidden on desktop
-                    mainContent.classList.remove('col-md-9'); // Updated
+                    mainContent.classList.remove('col-md-8'); 
                     mainContent.classList.add('col-md-12');
                 } else {
                     // Sidebar should be visible on desktop
                     mainContent.classList.remove('col-md-12');
-                    mainContent.classList.add('col-md-9'); // Updated
+                    mainContent.classList.add('col-md-8'); 
                 }
             }
         }

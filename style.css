@@ -8,388 +8,380 @@ body {
     flex-direction: column;
 }
 
-header {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+/* header { */
+  /* background: linear-gradient(to right, #6a11cb, #2575fc); */
  /* background: linear-gradient(to right, #004080, #00aaff, #004080);  */
 
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
+    /* color: white; */
+    /* padding: 10px 20px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* z-index: 1000; */
+/* } */
 
-header nav {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
+/* header nav { */
+    /* display: flex; */
+    /* align-items: center; */
+    /* width: 100%; */
+    /* justify-content: space-between; */
+/* } */
 
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-left: auto;
-}
+/* .navbar-right { */
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 20px; */
+    /* margin-left: auto; */
+/* } */
 
 
-nav#sidebar {
-    width: 250px;
-    background-color: #f4f4f4;
-    padding-top: 60px; /* Adjust for fixed header */
-    position: fixed;
-    left: 0;
-    top: 0; /* Align with top of viewport */
-    bottom: 0;
-    transition: transform 0.3s ease-in-out;
-    overflow-y: auto; /* Allow scrolling if content overflows */
-}
+/* nav#sidebar { */
+    /* width: 250px; */
+    /* background-color: #f4f4f4; */
+    /* padding-top: 60px; */ /* Adjust for fixed header */
+    /* position: fixed; */
+    /* left: 0; */
+    /* top: 0; */ /* Align with top of viewport */
+    /* bottom: 0; */
+    /* transition: transform 0.3s ease-in-out; */
+    /* overflow-y: auto; */ /* Allow scrolling if content overflows */
+/* } */
 
-nav#sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+/* nav#sidebar ul { */
+    /* list-style: none; */
+    /* padding: 0; */
+    /* margin: 0; */
+/* } */
 
-nav#sidebar ul li a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-}
+/* nav#sidebar ul li a { */
+    /* display: block; */
+    /* padding: 10px 15px; */
+    /* text-decoration: none; */
+    /* color: #333; */
+/* } */
 
-nav#sidebar ul li a:hover {
-    background-color: #ddd;
-}
+/* nav#sidebar ul li a:hover { */
+    /* background-color: #ddd; */
+/* } */
 
-.sidebar-hidden {
-    transform: translateX(-100%);
-}
+/* .sidebar-hidden { */
+    /* transform: translateX(-100%); */
+/* } */
 
 main {
-    margin-left: 250px; /* Accommodate sidebar */
+    /* margin-left: 250px; */ /* DEPRECATED - Offcanvas floats over */
     padding: 20px;
-    padding-top: 80px; /* Adjust for fixed header */
+    padding-top: 70px; /* Adjusted for Bootstrap navbar height */
     flex-grow: 1; /* Allow main content to take remaining space */
-    transition: margin-left 0.3s ease-in-out;
+    /* transition: margin-left 0.3s ease-in-out; */ /* DEPRECATED */
 }
 
 /* Navbar Elements */
-#sidebar-toggle-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+/* #sidebar-toggle-btn { */
+    /* background: none; */
+    /* border: none; */
+    /* color: white; */
+    /* font-size: 24px; */
+    /* cursor: pointer; */
+/* } */
 
-#notification-icon,
-#settings-dropdown-trigger {
-    color: white;
-    cursor: pointer;
-    position: relative; /* For dropdown positioning */
-}
+/* #notification-icon, */
+/* #settings-dropdown-trigger { */
+    /* color: white; */ /* Handled by Bootstrap .nav-link on dark navbar */
+    /* cursor: pointer; */
+    /* position: relative; */ /* For dropdown positioning */
+/* } */
 
-#notification-icon {
-    flex-grow: 1;
-    text-align: center;
-}
+/* #notification-icon { */
+    /* flex-grow: 1; */ /* Not needed with Bootstrap nav items */
+    /* text-align: center; */
+/* } */
 
-#settings-dropdown-trigger {
+/* #settings-dropdown-trigger { */
     /* margin-left has been removed */
     /* margin-right has been removed */
-}
+/* } */
 
-#settings-dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    right: 0;
-    top: 100%; /* Position below the trigger */
-    background-color: #444;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #555;
-    border-radius: 4px;
-    min-width: 120px;
-    z-index: 1001; /* Ensure dropdown is above other content */
-}
+/* #settings-dropdown-menu { */
+    /* display: none; */ /* Handled by Bootstrap */
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 100%; */ /* Position below the trigger */
+    /* background-color: #444; */ /* Handled by Bootstrap */
+    /* list-style: none; */
+    /* padding: 0; */
+    /* margin: 0; */
+    /* border: 1px solid #555; */ /* Handled by Bootstrap */
+    /* border-radius: 4px; */ /* Handled by Bootstrap */
+    /* min-width: 120px; */
+    /* z-index: 1001; */ /* Handled by Bootstrap */
+/* } */
 
-#settings-dropdown-menu li {
-    padding: 10px 15px;
-    cursor: pointer;
-}
+/* #settings-dropdown-menu li { */
+    /* padding: 10px 15px; */ /* Handled by Bootstrap .dropdown-item */
+    /* cursor: pointer; */
+/* } */
 
-#settings-dropdown-menu li:hover {
-    background-color: #555;
-}
+/* #settings-dropdown-menu li:hover { */
+    /* background-color: #555; */ /* Handled by Bootstrap .dropdown-item:hover */
+/* } */
 
 /* Profile Section */
-#profile-section {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 5px 20px;
-    background-color: #e7e7e7;
-    border-radius: 8px;
-}
+/* #profile-section { */
+    /* text-align: center; */ /* Replaced by Bootstrap text-center utility */
+    /* margin-bottom: 30px; */ /* Replaced by Bootstrap mb-4 utility */
+    /* padding: 5px 20px; */ /* Replaced by Bootstrap p-3 utility */
+    /* background-color: #e7e7e7; */ /* Replaced by Bootstrap bg-light utility */
+    /* border-radius: 8px; */ /* Replaced by Bootstrap rounded utility */
+/* } */
 
-#profile-section img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 5px;
-    border: 3px solid #ddd;
-}
+/* #profile-section img { */
+    /* width: 80px; */ /* Inline style used */
+    /* height: 80px; */ /* Inline style used */
+    /* border-radius: 50%; */ /* Replaced by Bootstrap rounded-circle utility */
+    /* margin-bottom: 5px; */ /* Replaced by Bootstrap mb-2 utility */
+    /* border: 3px solid #ddd; */ /* Replaced by Bootstrap img-thumbnail utility */
+/* } */
 
-#profile-section div p {
-    margin: 5px 0;
-    color: #333;
-    font-size: 1.1em;
-}
+/* #profile-section div p { */
+    /* margin: 5px 0; */ /* Replaced by Bootstrap my-1 utility */
+    /* color: #333; */ /* Default Bootstrap text color often sufficient */
+    /* font-size: 1.1em; */ /* Bootstrap default p size or typography classes can be used */
+/* } */
 
 /* Remaining Balance Section */
-#remaining-balance-section {
-    padding: 10px;
-    background-color: #e7e7e7;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
+/* #remaining-balance-section { */
+    /* padding: 10px; */ /* Replaced by Bootstrap p-3 utility */
+    /* background-color: #e7e7e7; */ /* Replaced by Bootstrap bg-light utility */
+    /* border-radius: 8px; */ /* Replaced by Bootstrap rounded utility */
+    /* margin-bottom: 30px; */ /* Replaced by Bootstrap mb-4 utility */
+    /* overflow: hidden; */
+/* } */
 
-#remaining-balance-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
+/* #remaining-balance-section h2 { */
+    /* text-align: center; */ /* Replaced by Bootstrap text-center utility */
+    /* margin-bottom: 10px; */ /* Replaced by Bootstrap mb-3 utility */
+/* } */
 
-#remaining-balance-section > div { /* Direct div children of the section (now .balance-circles-container) */
+/* #remaining-balance-section > div { */ /* Old container, replaced by Bootstrap row */
     /* Properties moved to .balance-circles-container */
     /* display: flex; */
     /* justify-content: flex-start; */
     /* overflow-x: auto; */
     /* white-space: nowrap; */
-}
+/* } */
 
-.balance-circle {
-    width: 60px; /* Increased size for better text fit */
-    height: 60px; /* Increased size for better text fit */
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column; /* Stack text vertically */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 5px; /* Add some space around circles */
-    padding: 5px; /* Add padding inside circles */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow */
-}
+/* .balance-circle { */
+    /* width: 60px; */ /* Sizing now handled by col classes and inline style on inner div */
+    /* height: 60px; */ /* Sizing now handled by col classes and inline style on inner div */
+    /* border-radius: 50%; */ /* Replaced by Bootstrap rounded-circle utility */
+    /* display: flex; */ /* Replaced by Bootstrap d-flex utility */
+    /* flex-direction: column; */ /* Replaced by Bootstrap flex-column utility */
+    /* justify-content: center; */ /* Replaced by Bootstrap justify-content-center utility */
+    /* align-items: center; */ /* Replaced by Bootstrap align-items-center utility */
+    /* text-align: center; */ /* Replaced by Bootstrap text-center utility */
+    /* margin: 5px; */ /* Handled by Bootstrap grid gap (gy-3) and column padding */
+    /* padding: 5px; */ /* Replaced by Bootstrap p-3 utility */
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */ /* Replaced by Bootstrap shadow-sm utility */
+/* } */
 
-/* .balance-circles-container {
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start; 
-    overflow-x: auto; 
-    padding-bottom: 10px; 
-} */
-/* Center Remaining Balance Section */
-.balance-circles-container {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Wrap on smaller screens */
-    gap: 10px;
-    padding-bottom: 5px;
-}
+/* .balance-circles-container { */ /* Old container, replaced by Bootstrap row */
+    /* display: flex; */
+    /* justify-content: center; */ /* Center items horizontally */
+    /* flex-wrap: wrap; */ /* Wrap on smaller screens */
+    /* gap: 10px; */
+    /* padding-bottom: 5px; */
+/* } */
 
-.balance-circle p {
-    margin: 5px 0; /* Adjust spacing between text lines */
-    font-size: 1em;
-}
+/* .balance-circle p { */
+    /* margin: 5px 0; */ /* Replaced by Bootstrap mb-1 on first p, mb-0 on second */
+    /* font-size: 1em; */ /* Base font size from Bootstrap */
+/* } */
 
-.balance-circle p:last-child { /* Style the number/value */
-    font-size: 1.2em;
-    font-weight: bold;
-}
+/* .balance-circle p:last-child { */ /* Style the number/value */
+    /* font-size: 1.2em; */ /* Replaced by Bootstrap fs-5 utility */
+    /* font-weight: bold; */ /* Replaced by Bootstrap fw-bold utility */
+/* } */
 
-#hold-day-circle {
-    border: 9px solid #ff6347; /* Tomato */
-    background-color: #ff634720; /* Light Tomato */
-}
+/* #hold-day-circle { */
+    /* border: 9px solid #ff6347; */ /* Replaced by Bootstrap border-5 border-danger */
+    /* background-color: #ff634720; */ /* Replaced by Bootstrap bg-danger-subtle */
+/* } */
 
-#hour-circle {
-    border: 9px solid #4682b4; /* SteelBlue */
-    background-color: #4682b420; /* Light SteelBlue */
-}
+/* #hour-circle { */
+    /* border: 9px solid #4682b4; */ /* Replaced by Bootstrap border-5 border-info */
+    /* background-color: #4682b420; */ /* Replaced by Bootstrap bg-info-subtle */
+/* } */
 
-#minute-circle {
-    border: 9px solid #32cd32; /* LimeGreen */
-    background-color: #32cd3220; /* Light LimeGreen */
-}
+/* #minute-circle { */
+    /* border: 9px solid #32cd32; */ /* Replaced by Bootstrap border-5 border-success */
+    /* background-color: #32cd3220; */ /* Replaced by Bootstrap bg-success-subtle */
+/* } */
 
-#second-circle {
-    border: 9px solid #ffa500; /* Orange */
-    background-color: #ffa50020; /* Light Orange */
-}
+/* #second-circle { */
+    /* border: 9px solid #ffa500; */ /* Replaced by Bootstrap border-5 border-warning */
+    /* background-color: #ffa50020; */ /* Replaced by Bootstrap bg-warning-subtle */
+/* } */
 
 /* Data Table Section */
-#data-table-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #e7e7e7; /* Consistent with other sections */
-    border-radius: 8px;
-}
+/* #data-table-section { */
+    /* margin-bottom: 30px; */ /* Replaced by Bootstrap mb-4 utility */
+    /* padding: 20px; */ /* Replaced by Bootstrap p-3 utility */
+    /* background-color: #e7e7e7; */ /* Replaced by Bootstrap bg-light utility */
+    /* border-radius: 8px; */ /* Replaced by Bootstrap rounded utility */
+/* } */
 
-#data-table-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+/* #data-table-section h2 { */
+    /* text-align: center; */ /* Replaced by Bootstrap text-center utility */
+    /* margin-bottom: 20px; */ /* Replaced by Bootstrap mb-3 utility */
+/* } */
 
-#data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+/* #data-table { */
+    /* width: 100%; */ /* Default for Bootstrap table */
+    /* border-collapse: collapse; */ /* Handled by Bootstrap table class */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+/* } */
 
-#data-table th {
-    background-color: #f2f2f2;
-    text-align: left;
-    padding: 12px;
-    border: 1px solid #ddd;
-}
+/* #data-table th { */
+    /* background-color: #f2f2f2; */ /* Striping handles this, or table-dark for thead */
+    /* text-align: left; */ /* Default for th */
+    /* padding: 12px; */ /* Handled by Bootstrap table cell padding */
+    /* border: 1px solid #ddd; */ /* Handled by Bootstrap table-bordered */
+/* } */
 
-#data-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    vertical-align: top;
-}
+/* #data-table td { */
+    /* padding: 10px; */ /* Handled by Bootstrap table cell padding */
+    /* border: 1px solid #ddd; */ /* Handled by Bootstrap table-bordered */
+    /* vertical-align: top; */ /* Default for td */
+/* } */
 
-#data-table tbody tr:hover {
-    background-color: #f9f9f9;
-}
+/* #data-table tbody tr:hover { */
+    /* background-color: #f9f9f9; */ /* Replaced by Bootstrap table-hover utility */
+/* } */
 
 /* Pagination Controls */
-#pagination-controls {
-    text-align: center;
-    margin-top: 20px;
-}
+/* #pagination-controls { */
+    /* text-align: center; */ /* Replaced by Bootstrap justify-content-center on ul */
+    /* margin-top: 20px; */
+/* } */
 
-#pagination-controls button {
-    padding: 8px 16px;
-    margin: 0 5px;
-    background-color: #5F7A8D; /* Navbar color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
+/* #pagination-controls button { */
+    /* padding: 8px 16px; */ /* Handled by Bootstrap .page-link */
+    /* margin: 0 5px; */ /* Handled by Bootstrap .page-item margin */
+    /* background-color: #5F7A8D; */ /* Handled by Bootstrap .page-link */
+    /* color: white; */ /* Handled by Bootstrap .page-link */
+    /* border: none; */ /* Handled by Bootstrap .page-link */
+    /* border-radius: 4px; */ /* Handled by Bootstrap .page-link */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+/* } */
 
-#pagination-controls button:hover:not(:disabled) {
-    background-color: #4A6572; /* Darker shade for hover */
-}
+/* #pagination-controls button:hover:not(:disabled) { */
+    /* background-color: #4A6572; */ /* Handled by Bootstrap .page-link:hover */
+/* } */
 
-#pagination-controls button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
+/* #pagination-controls button:disabled { */
+    /* background-color: #ccc; */ /* Handled by Bootstrap .page-item.disabled .page-link */
+    /* cursor: not-allowed; */
+/* } */
 
-#current-page-span {
-    margin: 0 10px;
-    font-weight: bold;
-}
+/* #current-page-span { */
+    /* margin: 0 10px; */ /* Handled by Bootstrap .page-item margin */
+    /* font-weight: bold; */ /* Often part of .active .page-link styling */
+/* } */
 
 /* Card Main Section */
-#card-main .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+/* #card-main .row { */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    /* gap: 15px; */
+/* } */
 
-.custom-dashboard-btn-1 {
-    border-radius: 10px;
-}
+/* .custom-dashboard-btn-1 { */
+    /* border-radius: 10px; */
+/* } */
 
 /* Basic Responsiveness */
-@media (max-width: 768px) {
-    main {
-        margin-left: 0; /* Remove margin when sidebar can be hidden */
-    }
+/* @media (max-width: 768px) { */
+    /* main { */
+        /* margin-left: 0; */ /* Remove margin when sidebar can be hidden */
+    /* } */
 
     /* Adjust balance circles for smaller screens if needed */
-    .balance-circle {
-        width: 100px;
-        height: 100px;
-    }
-    .balance-circle p:last-child {
-        font-size: 1.2em;
-    }
+    /* .balance-circle { */
+        /* width: 100px; */
+        /* height: 100px; */
+    /* } */
+    /* .balance-circle p:last-child { */
+        /* font-size: 1.2em; */
+    /* } */
 
-    #remaining-balance-section > div {
+    /* #remaining-balance-section > div { */
         /* justify-content: center; */ /* No longer wrapping, so flex-start from base rule is fine */
-    }
-}
+    /* } */
+/* } */
 
 /* Card Section Styles */
-#card-section {
-    /* padding: 20px; */
-    margin-bottom: 30px;
-    border-radius: 8px;
-}
+/* #card-section { */
+    /* padding: 20px; */ /* Using Bootstrap mb-4 on section now */
+    /* margin-bottom: 30px; */ /* Replaced by Bootstrap mb-4 utility */
+    /* border-radius: 8px; */ /* Cards have their own radius */
+/* } */
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 17px;
-    flex-wrap: wrap;
-}
+/* .card-container { */ /* Replaced by Bootstrap row */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 17px; */
+    /* flex-wrap: wrap; */
+/* } */
 
-.info-card {
-    width: 32%;
-    height: 100px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
+/* .info-card { */ /* Replaced by Bootstrap card in a col */
+    /* width: 32%; */
+    /* height: 100px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    /* overflow: hidden; */
+/* } */
 
-.card-top {
-    height: 50%;
-    background-color: #6a11cb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* .card-top { */ /* Replaced by card-header */
+    /* height: 50%; */
+    /* background-color: #6a11cb; */ /* Using bg-primary */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+/* } */
 
-.card-top button {
-    background-color: #ffffff;
-    color: #6a11cb;
-    border: none;
-    font-size: 24px;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+/* .card-top button { */
+    /* background-color: #ffffff; */ /* Using btn-light */
+    /* color: #6a11cb; */
+    /* border: none; */
+    /* font-size: 24px; */ /* Using btn-lg */
+    /* padding: 10px 15px; */ /* Using p-2 lh-1 */
+    /* border-radius: 50%; */ /* Using rounded-circle */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+/* } */
 
-.card-top button:hover {
-    background-color: #f0f0f0;
-}
+/* .card-top button:hover { */
+    /* background-color: #f0f0f0; */ /* Handled by Bootstrap btn-light:hover */
+/* } */
 
-.card-bottom {
-    height: 50%;
-    background-color: #2575fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 10px;
-}
+/* .card-bottom { */ /* Replaced by card-body */
+    /* height: 50%; */
+    /* background-color: #2575fc; */ /* Using bg-info */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* color: white; */ /* Using text-white */
+    /* padding: 10px; */
+/* } */

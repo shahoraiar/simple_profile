@@ -35,6 +35,7 @@ nav {
 #settings-dropdown-menu li {
     padding: 5px 10px;
     cursor: pointer;
+    color: #212529; /* Standard dark text color, contrasts with white background */
 }
 
 #settings-dropdown-menu li:hover {

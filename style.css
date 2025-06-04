@@ -106,6 +106,7 @@ nav {
     height: 100%;
 }
 
+<<<<<<< HEAD
 .two-part-button {
     display: flex;
     flex-direction: column; /* Stack upper and lower parts */
@@ -187,6 +188,21 @@ nav {
 .create-ticket-button .button-lower-part .original-icon,
 .create-ticket-button .button-lower-part .button-text-main {
     color: #333333; /* Dark icon and text for contrast on yellow */
+=======
+.btn-icon-stack {
+    flex-direction: row; /* Align icon and text side-by-side */
+    font-size: 1.1rem; /* Reduce text size within the button */
+    /* padding-top and padding-bottom removed, rely on default btn padding or adjust if needed */
+    /* justify-content: center; and align-items: center; are already on the button elements via d-flex */
+}
+
+.btn-icon-stack span {
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 0.5rem; /* Slightly adjust margin if needed for multiple icons */
+    font-size: 1.2rem;   /* Reduce icon size */
+    line-height: 1;      /* Keep for vertical alignment */
+    vertical-align: middle; /* To better align icons with text */
+>>>>>>> c37ed3cf001449b85f1433c472fba828a89c38df
 }
 
 .menu-icon {

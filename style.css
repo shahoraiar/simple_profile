@@ -4,7 +4,7 @@ body {
     margin: 0;
     /* padding: 0; Original padding, overridden by padding-top */
     padding-top: 60px; /* Adjust this value based on the actual height of the navbar */
-    background-color: #f8f9fa;
+    background-color: #dee4eb;
 }
 
 nav {

@@ -195,4 +195,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ... (any other existing code in DOMContentLoaded)
+
+    const togglePasswordVisibility = document.getElementById('toggle-password-visibility');
+    const passwordInput = document.getElementById('profile-password');
+    const passwordToggleIcon = document.querySelector('#toggle-password-visibility .password-toggle-icon'); // More specific selector
+
+    if (togglePasswordVisibility && passwordInput && passwordToggleIcon) {
+        togglePasswordVisibility.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggleIcon.textContent = '🔒'; // Icon representing "password visible, click to hide"
+            } else {
+                passwordInput.type = 'password';
+                passwordToggleIcon.textContent = '👁️'; // Icon representing "password hidden, click to show"
+            }
+        });
+    }
 });

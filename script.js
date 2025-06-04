@@ -167,3 +167,25 @@ document.body.addEventListener('click', function(event) {
         body.classList.remove('sidebar-overlay-active');
     }
 });
+
+// Collapsible Demu Menu Logic
+const demuToggle = document.querySelector('.demu-toggle');
+if (demuToggle) {
+  const demuSubmenu = demuToggle.nextElementSibling; // Assumes submenu is the immediate next sibling
+  const toggleIcon = demuToggle.querySelector('.toggle-icon');
+
+  demuToggle.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor link behavior
+    const isExpanded = demuToggle.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+      demuSubmenu.style.display = 'none';
+      toggleIcon.textContent = '+';
+      demuToggle.setAttribute('aria-expanded', 'false');
+    } else {
+      demuSubmenu.style.display = 'block';
+      toggleIcon.textContent = '-';
+      demuToggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+}

@@ -32,11 +32,28 @@ nav {
 #sidebar .nav-link {
     color: #212529;
     padding: 10px 15px;
+    font-size: 0.9rem;
 }
 
 #sidebar .nav-link:hover {
     background-color: #e2e6ea;
     border-radius: 5px;
+}
+
+.demu-toggle {
+  display: flex; /* Helps align icon and text */
+  justify-content: space-between; /* Pushes icon to the end if not using float */
+  align-items: center;
+}
+
+.toggle-icon {
+  font-weight: bold;
+  margin-left: 5px; /* Adds a little space if it's not floated */
+}
+
+.demu-submenu .nav-link {
+  font-size: 0.85rem; /* Slightly smaller than main sidebar links */
+  padding-left: 10px; /* Adjust padding as needed */
 }
 
 #settings-dropdown-menu li {
@@ -283,9 +300,11 @@ nav {
 
     #sidebar {
         position: static; /* Revert to normal flow */
-        height: auto; /* Allows content or flexbox to determine height */
         transform: none; /* No translation */
-        display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
+        display: flex; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
+        flex-direction: column;
+        min-height: calc(100vh - 60px); /* Assuming 60px navbar height */
+        overflow-y: auto; /* Add this in case content overflows */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
         max-width: 100%;  /* don’t limit max size */
     }

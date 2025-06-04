@@ -103,6 +103,11 @@ nav {
     padding-right: 2rem; /* Or another value like 1.5rem or 2.5rem as needed */
 }
 
+/* Full height layout for the row containing sidebar and main content */
+.container-fluid > .row {
+    min-height: calc(100vh - 60px); /* 60px is the body padding-top for the navbar */
+}
+
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */
     #easy-isp-title {
         font-size: 1.1rem; /* Reduce font size from 1.4rem */
@@ -154,18 +159,29 @@ nav {
 @media (min-width: 768px) { /* For desktop/tablet landscape view */
     #sidebar {
         position: static; /* Revert to normal flow */
-        height: auto; /* Allows content or flexbox to determine height */
+        height: 100%; /* Make sidebar take full height of parent row */
         width: auto !important; /* Force Bootstrap column width */
         transform: none; /* No translation */
         display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
-        border: 2px solid red !important; /* Debug border */
         min-width: 320px; /* wider than Bootstrap's default */
         max-width: 100%;  /* don’t limit max size */
     }
     
     #main-content {
-        border: 2px solid blue !important; /* Debug border */
+        height: 100%; /* Make main content take full height of parent row */
+        display: flex;
+        flex-direction: column;
+    }
+
+    #main-content > .row {
+        display: flex; /* Ensure it behaves as a flex container for columns */
+        flex-grow: 1; /* Allow this row to take up space in the flex column of main-content */
+    }
+
+    #main-content > .row > [class*="col-"] {
+        display: flex; /* Make the column a flex container */
+        flex-direction: column; /* Align items inside column vertically */
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

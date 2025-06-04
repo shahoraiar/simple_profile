@@ -160,8 +160,10 @@ nav {
         display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
         border: 2px solid red !important; /* Debug border */
+        min-width: 320px; /* wider than Bootstrap's default */
+        max-width: 100%;  /* don’t limit max size */
     }
-
+    
     #main-content {
         border: 2px solid blue !important; /* Debug border */
     }

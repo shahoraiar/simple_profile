@@ -112,6 +112,8 @@ nav {
     padding: 0;             /* Remove default button padding */
     border: none;           /* Remove default button border */
     text-align: center;     /* Ensure text within is generally centered if not overridden by flex on parts */
+    border-radius: 0.375rem; /* Standard Bootstrap button radius */
+    overflow: hidden;        /* Clip inner parts to the rounded corners */
     /* w-100 and h-100 are from bootstrap classes on the element */
 }
 
@@ -119,7 +121,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 40%;        /* Takes 40% of the button's height */
+    flex: 1;        /* Takes 40% of the button's height */
     /* background-color will be set by specific button class like .pay-bill-button */
     /* Adding a fallback/generic color for now, or leave transparent */
     background-color: #e0e0e0; /* Placeholder light gray */
@@ -136,7 +138,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: row;    /* Icon and text side-by-side */
-    flex-basis: 60%;        /* Takes 60% of the button's height */
+    flex: 1;        /* Takes 60% of the button's height */
     /* background-color will be set by specific button class */
     background-color: #f0f0f0; /* Placeholder slightly different gray */
     padding: 5px; /* Add some padding for content spacing */
@@ -159,7 +161,7 @@ nav {
 
 /* Pay Bill Button Specific Colors */
 .pay-bill-button .button-upper-part {
-    background-color: #589AFC; /* Lighter blue */
+    background-color: #6c757d; /* Lighter blue */
 }
 .pay-bill-button .button-upper-part .plus-icon-large {
     color: #ffffff; /* White plus icon */
@@ -174,10 +176,10 @@ nav {
 
 /* Create Ticket Button Specific Colors */
 .create-ticket-button .button-upper-part {
-    background-color: #FFD35C; /* Lighter yellow/orange */
+    background-color: #6c757d; /* Lighter yellow/orange */
 }
 .create-ticket-button .button-upper-part .plus-icon-large {
-    color: #333333; /* Dark plus icon for contrast on light yellow */
+    color: #ffffff; /* Dark plus icon for contrast on light yellow */
 }
 .create-ticket-button .button-lower-part {
     background-color: #ffc107; /* Bootstrap warning yellow/orange */

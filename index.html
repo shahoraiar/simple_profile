@@ -13,9 +13,16 @@
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <div id="easy-isp-title"><span class="brand-text">Easy ISP</span> <span class="hamburger-icon">☰</span></div>
         <div class="navbar-right d-flex align-items-center">
-          <div id="notification-icon" class="me-3">🔔</div>
-          <div id="settings-dropdown-trigger" class="position-relative">
-            ⚙️
+        <div id="notification-wrapper" class="position-relative">
+          <div id="notification-icon" class="me-3" style="cursor: pointer;">🔔</div>
+          <ul id="notification-dropdown-menu" class="position-absolute bg-white list-unstyled p-2 shadow" style="left: 0; top: 100%; display: none; min-width: 280px; color: #333; z-index: 1050;">
+            <li><span class="menu-icon">ℹ️</span> Notification 1: System maintenance soon.</li>
+            <li><span class="menu-icon">💬</span> Notification 2: New message from support.</li>
+            <li><span class="menu-icon">⚠️</span> Notification 3: Your plan is expiring in 3 days.</li>
+          </ul>
+        </div>
+        <div id="settings-dropdown-trigger" class="position-relative" style="cursor: pointer;">
+          <span class="pppoe-dashboard-text">PPPoE Dashboard</span><span class="dropdown-arrow"> ▼</span>
             <ul id="settings-dropdown-menu" class="position-absolute bg-white list-unstyled p-2 shadow" style="right:0; top:100%; display: none;">
             <li><span class="menu-icon">👤</span> Profile</li>
             <li><span class="menu-icon">🚪</span> Logout</li>

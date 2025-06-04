@@ -50,6 +50,7 @@ nav {
 
 #settings-dropdown-menu {
     z-index: 1050;
+    min-width: 220px; /* Or a more suitable value like 220px if 200 is too small */
 }
 
 #easy-isp-title {
@@ -112,6 +113,22 @@ nav {
        We want more horizontal padding. */
     padding-left: 3rem;  /* Increased from 2rem */
     padding-right: 3rem; /* Increased from 2rem */
+}
+
+.pppoe-dashboard-text {
+    margin-right: 4px; /* Space before the arrow */
+    /* color: white; /* Should be inherited */
+    /* font-weight: normal; /* Or bold, as desired */
+}
+
+.dropdown-arrow {
+    font-size: 0.8em; /* Make arrow slightly smaller */
+}
+
+#settings-dropdown-trigger {
+    /* Ensures the text and arrow are baseline aligned if they wrap, and treated as a single clickable block */
+    /* No specific flex needed if they are simple spans, they'll flow inline. */
+    /* Add padding if the clickable area needs to be larger than the text/arrow itself */
 }
 
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */

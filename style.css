@@ -54,10 +54,13 @@ nav {
 }
 
 #notification-dropdown-menu {
-    min-width: 320px;  /* Increased from 280px */
-    color: #333;       /* Moved from inline */
-    z-index: 1050;     /* Moved from inline */
-    /* left: 0; top: 100%; can also be here if we remove from inline */
+    min-width: 400px;  /* Increased from 368px */
+    color: #333;
+    z-index: 1030;
+    /* left: -189px; /* Removed */
+    right: 0;          /* Added: Aligns right edge with container's right edge */
+    margin-right: 10px;/* Added: Pulls dropdown 10px left from its right alignment */
+    /* top: 100%; /* This is still inline, can be moved here too */
 }
 
 #easy-isp-title {

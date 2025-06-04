@@ -138,6 +138,19 @@ nav {
     background-color: #ffffff !important;
 }
 
+#profile-section .profile-details {
+    text-align: left; /* Or text-align: start; */
+    /* Add margin-top if needed to space it from the image, e.g., margin-top: 1rem; */
+}
+
+.profile-item-label {
+    font-weight: bold;
+    margin-right: 0.5rem; /* Space between label and value */
+    white-space: nowrap;  /* Prevent label from wrapping */
+    /* Optional: Define a fixed width if you want all labels to align vertically
+       e.g., width: 80px; text-align: right; or use Bootstrap grid for more complex layouts */
+}
+
 .two-part-button {
     display: flex;
     flex-direction: column; /* Stack upper and lower parts */

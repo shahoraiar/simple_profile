@@ -91,21 +91,27 @@ nav {
 }
 
 .btn-icon-stack {
-    flex-direction: column; /* Stack items vertically */
-    padding-top: 0.75rem; /* Add some padding to the top */
-    padding-bottom: 0.75rem; /* Add some padding to the bottom */
+    flex-direction: row; /* Align icon and text side-by-side */
+    /* padding-top and padding-bottom removed, rely on default btn padding or adjust if needed */
+    /* justify-content: center; and align-items: center; are already on the button elements via d-flex */
 }
 
 .btn-icon-stack span {
-    margin-bottom: 0.35rem; /* Space between icon and text */
-    font-size: 1.5rem; /* Optional: adjust icon size if needed */
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 0.5rem; /* Add right margin for spacing */
+    font-size: 1.25rem; /* Optionally adjust icon size, 1.5rem might be too large side-by-side */
+    line-height: 1; /* May help align emoji icons better with text */
+}
+
+.menu-icon {
+    margin-right: 8px; /* Space between icon and menu item text */
 }
 
 .custom-bill-card-body {
     /* Bootstrap's default card-body padding is typically 1rem.
        We want more horizontal padding. */
-    padding-left: 2rem;  /* Or another value like 1.5rem or 2.5rem as needed */
-    padding-right: 2rem; /* Or another value like 1.5rem or 2.5rem as needed */
+    padding-left: 3rem;  /* Increased from 2rem */
+    padding-right: 3rem; /* Increased from 2rem */
 }
 
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */

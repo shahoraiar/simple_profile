@@ -4,6 +4,7 @@ body {
     margin: 0;
     /* padding: 0; Original padding, overridden by padding-top */
     padding-top: 60px; /* Adjust this value based on the actual height of the navbar */
+    background-color: #f8f9fa;
 }
 
 nav {
@@ -16,7 +17,7 @@ nav {
 }
 
 #sidebar {
-    background-color: #f8f9fa !important; /* Re-asserting with !important, or use #ffffff for plain white */
+    background-color: #ffffff !important; /* Re-asserting with !important, or use #ffffff for plain white */
     opacity: 1 !important; /* Ensure it's fully opaque */
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
@@ -104,6 +105,7 @@ nav {
 #profile-section,
 #remaining-balance-section {
     height: 100%;
+    background-color: #ffffff;
 }
 
 .two-part-button {
@@ -214,6 +216,10 @@ nav {
     /* Ensures the text and arrow are baseline aligned if they wrap, and treated as a single clickable block */
     /* No specific flex needed if they are simple spans, they'll flow inline. */
     /* Add padding if the clickable area needs to be larger than the text/arrow itself */
+}
+
+.card {
+    background-color: #ffffff;
 }
 
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */

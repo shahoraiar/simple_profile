@@ -56,10 +56,10 @@ nav {
     /* padding-left will be handled by ms-3 class in HTML for now */
 }
 
-#sidebar .sub-menu .blue-pipe {
-    color: blue;
-    margin-right: 8px; /* Space between pipe and text */
-    font-weight: bold; /* Make pipe a bit more visible */
+#sidebar .sub-menu .nav-link {
+    border-left: 3px solid blue;
+    padding: 8px 12px; /* Slightly less vertical padding, and 15px-3px for left */
+    /* Ensure it doesn't pick up the main #sidebar .nav-link padding if that one is too generic */
 }
 
 #sidebar .sub-menu .nav-link:hover {

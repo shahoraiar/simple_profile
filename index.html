@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <nav class="fixed-top">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div id="easy-isp-title"><span class="brand-text">Easy ISP</span> <span class="hamburger-icon">☰</span></div>
+        <div class="navbar-right d-flex align-items-center">
+        <div id="notification-wrapper" class="position-relative">
+          <div id="notification-icon" class="me-3" style="cursor: pointer;">🔔</div>
+          <ul id="notification-dropdown-menu" class="position-absolute bg-white list-unstyled p-2 shadow" style="top: 100%; display: none;">
+            <li><span class="menu-icon">ℹ️</span> Notification 1: System maintenance soon.</li>
+            <li><span class="menu-icon">💬</span> Notification 2: New message from support.</li>
+            <li><span class="menu-icon">⚠️</span> Notification 3: Your plan is expiring in 3 days.</li>
+          </ul>
+        </div>
+        <div id="settings-dropdown-trigger" class="position-relative" style="cursor: pointer;">
+          <span class="pppoe-dashboard-text">PPPoE Dashboard</span><span class="dropdown-arrow"> ▼</span>
+            <ul id="settings-dropdown-menu" class="position-absolute bg-white list-unstyled p-2 shadow" style="right:0; top:100%; display: none;">
+            <li><span class="menu-icon">👤</span> Profile</li>
+            <li><span class="menu-icon">🚪</span> Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="col-md-3">
+        <h5>Menu</h5>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item"><a class="nav-link" href="#"><span class="menu-icon">📊</span> Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><span class="menu-icon">📄</span> Reports</a></li>
+        </ul>
+      </div>
+
+      <div id="main-content" class="col-md-9">
+        <div class="row my-3">
+          <div class="col-md-6">
+            <section id="profile-section" class="bg-light p-3 rounded text-center">
+              <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile Image" class="rounded-circle img-thumbnail mb-2" style="width: 80px; height: 80px;">
+              <div>
+                <p class="my-1">Name: John Doe</p>
+                <p class="my-1">Password: ••••••••</p>
+                <p class="my-1">Status: Active</p>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-6">
+            <section id="remaining-balance-section" class="bg-light p-3 rounded">
+              <h5 class="text-center mb-3">Remaining Balance</h5>
+              <div class="row text-center">
+                <div class="col-6 col-sm-3">
+                  <div id="hold-day-circle" class="rounded-circle bg-danger-subtle border border-3 border-danger p-2 countdown-circle">
+                    <p>Day</p>
+                    <p id="days" class="countdown-circle-value">15</p>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <div id="hour-circle" class="rounded-circle bg-info-subtle border border-3 border-info p-2 countdown-circle">
+                    <p>Hour</p>
+                    <p id="hours" class="countdown-circle-value">10</p>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <div id="minute-circle" class="rounded-circle bg-success-subtle border border-3 border-success p-2 countdown-circle">
+                    <p>Minute</p>
+                    <p id="minutes" class="countdown-circle-value">30</p>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <div id="second-circle" class="rounded-circle bg-warning-subtle border border-3 border-warning p-2 countdown-circle">
+                    <p>Second</p>
+                    <p id="seconds" class="countdown-circle-value">45</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <button class="btn w-100 h-100 two-part-button pay-bill-button">
+              <div class="button-upper-part">
+                <span class="plus-icon-large">+</span>
+              </div>
+              <div class="button-lower-part">
+                <span class="original-icon">💳</span>
+                <span class="button-text-main">Pay Bill</span>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn w-100 h-100 two-part-button create-ticket-button">
+              <div class="button-upper-part">
+                <span class="plus-icon-large">+</span>
+              </div>
+              <div class="button-lower-part">
+                <span class="original-icon">🎫</span>
+                <span class="button-text-main">Create Ticket</span>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body d-flex justify-content-between custom-bill-card-body">
+                <div>
+                   <div>📅</div>
+                  <div>Monthly Bill</div>
+                  <div>$120</div>
+                </div>
+                <div class="text-end">
+                  <div>📅</div>
+                  <div>Due Bill</div>
+                  <div>$45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -53,6 +53,13 @@ nav {
     min-width: 220px; /* Or a more suitable value like 220px if 200 is too small */
 }
 
+#notification-dropdown-menu {
+    min-width: 320px;  /* Increased from 280px */
+    color: #333;       /* Moved from inline */
+    z-index: 1050;     /* Moved from inline */
+    /* left: 0; top: 100%; can also be here if we remove from inline */
+}
+
 #easy-isp-title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -60,7 +67,7 @@ nav {
 }
 
 #easy-isp-title .hamburger-icon {
-    margin-left: 10px; /* Adjust this value as needed for desired spacing */
+    margin-left: 0; /* Adjust this value as needed for desired spacing */
 }
 
 .countdown-circle-value {
@@ -180,6 +187,15 @@ nav {
 }
 
 @media (min-width: 768px) { /* For desktop/tablet landscape view */
+    #easy-isp-title {
+        flex: 0 0 25%; /* flex-grow, flex-shrink, flex-basis (25% for col-md-3 equivalent) */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Potentially add padding if needed, e.g., padding-right to ensure some space if container has none */
+        /* However, the parent container-fluid already has padding. */
+    }
+
     #sidebar {
         position: static; /* Revert to normal flow */
         height: auto; /* Allows content or flexbox to determine height */
@@ -190,10 +206,6 @@ nav {
     }
     
     #main-content {
-    }
-
-    #easy-isp-title .hamburger-icon {
-        margin-left: 12.5rem; /* 200px at 16px base font size */
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

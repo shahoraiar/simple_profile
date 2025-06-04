@@ -41,13 +41,11 @@ nav {
 
 .demu-toggle {
   display: flex; /* Helps align icon and text */
-  justify-content: flex-start; /* Align items to the start */
+  justify-content: space-between; /* Ensures space between text and icon */
   align-items: center;
 }
 
-.demu-text {
-  margin-right: 8px; /* Space between 'Demu' text and '+' icon */
-}
+/* .demu-text rule removed */
 
 .toggle-icon {
   font-weight: bold;
@@ -70,6 +68,18 @@ nav {
   margin-left: 5px; /* To space out the border from parent highlight */
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.demu-submenu .nav-link:focus,
+.demu-submenu .nav-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+  /* If there's any specific background or border on hover/active
+     that might have a radius, ensure it's reset or also has no radius.
+     For example, if Bootstrap's .nav-link:hover has a background with radius:
+     background-color: transparent !important; /* or specific color without radius */
+     /* border-radius: 0 !important; /* if a radius is being applied by another rule */
+  */
 }
 
 #settings-dropdown-menu li {

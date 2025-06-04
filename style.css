@@ -3,6 +3,7 @@ body {
     margin: 0;
     /* padding: 0; Original padding, overridden by padding-top */
     padding-top: 60px; /* Adjust this value based on the actual height of the navbar */
+    background-color: #E0E0E0;
 }
 
 nav {
@@ -15,7 +16,7 @@ nav {
 }
 
 #sidebar {
-    background-color: #f8f9fa !important; /* Re-asserting with !important, or use #ffffff for plain white */
+    background-color: #ffffff !important; /* Re-asserting with !important, or use #ffffff for plain white */
     opacity: 1 !important; /* Ensure it's fully opaque */
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
@@ -99,6 +100,7 @@ nav {
 #profile-section,
 #remaining-balance-section {
     height: 100%;
+    background-color: #ffffff;
 }
 
 .two-part-button {
@@ -111,6 +113,7 @@ nav {
     overflow: hidden;        /* Clip inner parts to the rounded corners */
     min-height: 120px;      /* Added min-height */
     /* w-100 and h-100 are from bootstrap classes on the element */
+    height: 120px;
 }
 
 .button-upper-part {
@@ -182,7 +185,7 @@ nav {
 }
 .create-ticket-button .button-lower-part .original-icon,
 .create-ticket-button .button-lower-part .button-text-main {
-    color: #333333; /* Dark icon and text for contrast on yellow */
+    color: #ffffff; /* White icon and text */
 }
 
 .menu-icon {
@@ -270,6 +273,10 @@ nav {
         /* However, the parent container-fluid already has padding. */
     }
 
+.card {
+    background-color: #ffffff;
+}
+
     #sidebar {
         position: static; /* Revert to normal flow */
         height: auto; /* Allows content or flexbox to determine height */
@@ -295,6 +302,7 @@ nav {
     }
 }
 
+<<<<<<< HEAD
 /* Custom padding for specific button columns */
 .col-btn-paybill {
     padding-left: 0;
@@ -302,4 +310,13 @@ nav {
 
 .col-btn-createticket {
     padding-right: 0;
+=======
+/* Remove focus outline and shadow from buttons */
+.btn:focus,
+.btn:active,
+.two-part-button:focus,
+.two-part-button:active {
+    outline: none !important;
+    box-shadow: none !important;
+>>>>>>> cf7022121d9a9a254fff911dd8ee2643b4a845bf
 }

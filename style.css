@@ -192,8 +192,15 @@ nav {
 .btn-icon-stack {
     flex-direction: row; /* Align icon and text side-by-side */
     font-size: 1.1rem; /* Reduce text size within the button */
-    /* padding-top and padding-bottom removed, rely on default btn padding or adjust if needed */
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     /* justify-content: center; and align-items: center; are already on the button elements via d-flex */
+}
+
+.btn-icon-stack:focus, .btn-icon-stack:active {
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-icon-stack span {
@@ -313,4 +320,13 @@ nav {
     #sidebar.sidebar-mobile-visible {
         transform: none; /* No translation needed for desktop */
     }
+}
+
+/* Custom padding for specific button columns */
+.col-btn-paybill {
+    padding-left: 0;
+}
+
+.col-btn-createticket {
+    padding-right: 0;
 }

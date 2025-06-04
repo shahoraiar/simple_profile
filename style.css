@@ -46,6 +46,27 @@ nav {
     border-radius: 5px;
 }
 
+#sidebar .nav-link .toggle-icon {
+    font-weight: bold;
+    /* Basic styling, can be enhanced */
+}
+
+#sidebar .sub-menu {
+    list-style-type: none; /* Ensures no bullets, though .nav should handle this */
+    /* padding-left will be handled by ms-3 class in HTML for now */
+}
+
+#sidebar .sub-menu .blue-pipe {
+    color: blue;
+    margin-right: 8px; /* Space between pipe and text */
+    font-weight: bold; /* Make pipe a bit more visible */
+}
+
+#sidebar .sub-menu .nav-link:hover {
+    background-color: #e2e6ea; /* Keep hover background consistent */
+    border-radius: 0;      /* Remove border radius for sub-items */
+}
+
 #settings-dropdown-menu li {
     padding: 5px 10px;
     cursor: pointer;

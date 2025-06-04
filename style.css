@@ -161,7 +161,7 @@ nav {
 
 /* Pay Bill Button Specific Colors */
 .pay-bill-button .button-upper-part {
-    background-color: #6c757d; /* Lighter blue */
+    background-color: #ff8a07f2; /* Lighter blue */
 }
 .pay-bill-button .button-upper-part .plus-icon-large {
     color: #ffffff; /* White plus icon */
@@ -176,13 +176,13 @@ nav {
 
 /* Create Ticket Button Specific Colors */
 .create-ticket-button .button-upper-part {
-    background-color: #6c757d; /* Lighter yellow/orange */
+    background-color: #0d6efd; /* Lighter yellow/orange */
 }
 .create-ticket-button .button-upper-part .plus-icon-large {
     color: #ffffff; /* Dark plus icon for contrast on light yellow */
 }
 .create-ticket-button .button-lower-part {
-    background-color: #ffc107; /* Bootstrap warning yellow/orange */
+    background-color: #ff8a07f2; /* Bootstrap warning yellow/orange */
 }
 .create-ticket-button .button-lower-part .original-icon,
 .create-ticket-button .button-lower-part .button-text-main {

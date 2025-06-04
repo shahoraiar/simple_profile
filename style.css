@@ -54,11 +54,11 @@ nav {
 #sidebar .sub-menu {
     list-style-type: none; /* Ensures no bullets, though .nav should handle this */
     /* padding-left will be handled by ms-3 class in HTML for now */
-    margin-left: 27px; /* Align border with parent text */
     margin-top: 0px;   /* Reduce space above sub-menu */
 }
 
 #sidebar .sub-menu .nav-link {
+    margin-left: 33px;    /* As per user specification */
     border-left: 3px solid blue;
     /* Ensure it doesn't pick up the main #sidebar .nav-link padding if that one is too generic */
     padding: 8px 12px; /* Restored to standard padding */

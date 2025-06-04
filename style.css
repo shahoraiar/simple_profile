@@ -102,19 +102,85 @@ nav {
     height: 100%;
 }
 
-.btn-icon-stack {
-    flex-direction: row; /* Align icon and text side-by-side */
-    font-size: 0.85rem; /* Reduce text size within the button */
-    /* padding-top and padding-bottom removed, rely on default btn padding or adjust if needed */
-    /* justify-content: center; and align-items: center; are already on the button elements via d-flex */
+.two-part-button {
+    display: flex;
+    flex-direction: column; /* Stack upper and lower parts */
+    padding: 0;             /* Remove default button padding */
+    border: none;           /* Remove default button border */
+    text-align: center;     /* Ensure text within is generally centered if not overridden by flex on parts */
+    /* w-100 and h-100 are from bootstrap classes on the element */
 }
 
-.btn-icon-stack span {
-    margin-bottom: 0; /* Remove bottom margin */
-    margin-right: 0.4rem; /* Slightly adjust margin if needed for multiple icons */
-    font-size: 0.9rem;   /* Reduce icon size */
-    line-height: 1;      /* Keep for vertical alignment */
-    vertical-align: middle; /* To better align icons with text */
+.button-upper-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;        /* Takes 40% of the button's height */
+    /* background-color will be set by specific button class like .pay-bill-button */
+    /* Adding a fallback/generic color for now, or leave transparent */
+    background-color: #e0e0e0; /* Placeholder light gray */
+}
+
+.button-upper-part .plus-icon-large { /* More specific selector */
+    font-size: 1.8rem;  /* Make '+' icon large */
+    color: #333;       /* Placeholder color, can be overridden */
+    line-height: 1;     /* Ensure tight fit */
+}
+
+.button-lower-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;    /* Icon and text side-by-side */
+    flex-basis: 60%;        /* Takes 60% of the button's height */
+    /* background-color will be set by specific button class */
+    background-color: #f0f0f0; /* Placeholder slightly different gray */
+    padding: 5px; /* Add some padding for content spacing */
+    box-sizing: border-box;
+}
+
+.button-lower-part .original-icon { /* More specific selector */
+    font-size: 1rem;    /* Adjust as needed */
+    margin-right: 0.4rem; /* Space between icon and text */
+    line-height: 1;
+    vertical-align: middle; /* Align with text */
+}
+
+.button-lower-part .button-text-main { /* More specific selector */
+    font-size: 0.8rem; /* Adjust as needed */
+    color: #333;       /* Placeholder color, can be overridden */
+    line-height: 1.2;
+    vertical-align: middle; /* Align with icon */
+}
+
+/* Pay Bill Button Specific Colors */
+.pay-bill-button .button-upper-part {
+    background-color: #589AFC; /* Lighter blue */
+}
+.pay-bill-button .button-upper-part .plus-icon-large {
+    color: #ffffff; /* White plus icon */
+}
+.pay-bill-button .button-lower-part {
+    background-color: #0d6efd; /* Bootstrap primary blue */
+}
+.pay-bill-button .button-lower-part .original-icon,
+.pay-bill-button .button-lower-part .button-text-main {
+    color: #ffffff; /* White icon and text */
+}
+
+/* Create Ticket Button Specific Colors */
+.create-ticket-button .button-upper-part {
+    background-color: #FFD35C; /* Lighter yellow/orange */
+}
+.create-ticket-button .button-upper-part .plus-icon-large {
+    color: #333333; /* Dark plus icon for contrast on light yellow */
+}
+.create-ticket-button .button-lower-part {
+    background-color: #ffc107; /* Bootstrap warning yellow/orange */
+}
+.create-ticket-button .button-lower-part .original-icon,
+.create-ticket-button .button-lower-part .button-text-main {
+    color: #333333; /* Dark icon and text for contrast on yellow */
 }
 
 .menu-icon {

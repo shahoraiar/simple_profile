@@ -196,19 +196,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ... (any other existing code in DOMContentLoaded)
 
-    const togglePasswordVisibility = document.getElementById('toggle-password-visibility');
-    const passwordInput = document.getElementById('profile-password');
-    const passwordToggleIcon = document.querySelector('#toggle-password-visibility .password-toggle-icon'); // More specific selector
 
-    if (togglePasswordVisibility && passwordInput && passwordToggleIcon) {
-        togglePasswordVisibility.addEventListener('click', function() {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                passwordToggleIcon.textContent = '🔒'; // Icon representing "password visible, click to hide"
-            } else {
-                passwordInput.type = 'password';
-                passwordToggleIcon.textContent = '👁️'; // Icon representing "password hidden, click to show"
-            }
-        });
-    }
+ const passwordText = document.getElementById('password-text');
+  const togglePassword = document.getElementById('toggle-password');
+
+//   const realPassword = "{{ password|escapejs }}";  // Injected from Django safely
+  const realPassword = 1254645645;  // Injected from Django safely
+
+  let passwordShown = false;
+
+  togglePassword.addEventListener('click', () => {
+    passwordShown = !passwordShown;
+    passwordText.textContent = passwordShown ? realPassword : '••••••••••';
+    togglePassword.textContent = passwordShown ? '🔒' : '👁️';
+  });
+
 });

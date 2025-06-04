@@ -45,17 +45,21 @@ nav {
   align-items: center;
 }
 
+.demu-text {
+  margin-right: 8px; /* Space between 'Demu' text and '+' icon */
+}
+
 .toggle-icon {
   font-weight: bold;
-  margin-left: 5px; /* Adds a little space if it's not floated */
+  /* margin-left: 5px; Removed, as .demu-text will handle spacing */
 }
 
 .demu-submenu {
   /* The ms-3 bootstrap class provides margin-left: 1rem.
      We can add a bit more margin if needed, or a background.
      Let's add a slightly different background to the submenu container. */
-  background-color: #f0f0f0; /* Light gray background for the sub-menu block */
-  border-radius: 4px; /* Optional: rounded corners for the sub-menu block */
+  /* background-color: #f0f0f0; Removed */
+  /* border-radius: 4px; Removed */
   margin-top: 5px; /* Space between parent item and sub-menu block */
 }
 
@@ -248,6 +252,9 @@ nav {
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */
     #easy-isp-title {
         font-size: 1.1rem; /* Reduce font size from 1.4rem */
+        display: flex; /* Explicitly ensure flex display if not inherited reliably */
+        align-items: center; /* Ensure vertical alignment */
+        flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
     }
     .navbar-right { /* Container for notification and settings icons */
         font-size: 0.9rem; /* Slightly reduce icon size if they are text/emoji based */

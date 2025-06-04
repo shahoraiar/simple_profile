@@ -54,12 +54,12 @@ nav {
 }
 
 #notification-dropdown-menu {
-    min-width: 280px;   /* Default width for mobile */
+    min-width: 300px;   /* Increased from 280px */
     color: #333;
     z-index: 1030;
-    left: 0;            /* Mobile: align left edge with notification-wrapper's left edge */
-    right: auto;        /* Mobile: ensure 'left' takes precedence */
-    margin-right: 0;    /* Mobile: no specific right margin */
+    left: -100px;       /* Changed from '0' to shift left relative to wrapper */
+    right: auto;        /* Stays: ensure 'left' takes precedence over desktop 'right' */
+    margin-right: 0;    /* Stays: ensure no right margin from desktop rule applies here */
     /* top: 100%; is still an inline style in index.html */
     /* display: none; is still an inline style in index.html */
 }

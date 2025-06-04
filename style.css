@@ -139,7 +139,10 @@ nav {
 }
 
 #profile-section .profile-details {
-    text-align: left; /* Or text-align: start; */
+    display: inline-block; /* Allows centering by parent's text-center */
+    text-align: left;    /* Keeps content within this block left-aligned */
+    /* Optional: Add a width if inline-block doesn't size as expected,
+       but usually it sizes to its content. e.g., width: auto; or a specific max-width */
     /* Add margin-top if needed to space it from the image, e.g., margin-top: 1rem; */
 }
 

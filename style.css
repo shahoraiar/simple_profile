@@ -25,7 +25,7 @@ nav {
 }
 
 #main-content {
-    padding: 20px 15px;
+    padding: 0 15px 20px 15px; /* top, right, bottom, left */
 }
 
 #sidebar .nav-link {
@@ -167,6 +167,10 @@ nav {
     }
     
     #main-content {
+    }
+
+    #easy-isp-title .hamburger-icon {
+        margin-left: 12.5rem; /* 200px at 16px base font size */
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

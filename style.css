@@ -54,13 +54,14 @@ nav {
 }
 
 #notification-dropdown-menu {
-    min-width: 400px;  /* Increased from 368px */
+    min-width: 280px;   /* Default width for mobile */
     color: #333;
     z-index: 1030;
-    /* left: -189px; /* Removed */
-    right: 0;          /* Added: Aligns right edge with container's right edge */
-    margin-right: 10px;/* Added: Pulls dropdown 10px left from its right alignment */
-    /* top: 100%; /* This is still inline, can be moved here too */
+    left: 0;            /* Mobile: align left edge with notification-wrapper's left edge */
+    right: auto;        /* Mobile: ensure 'left' takes precedence */
+    margin-right: 0;    /* Mobile: no specific right margin */
+    /* top: 100%; is still an inline style in index.html */
+    /* display: none; is still an inline style in index.html */
 }
 
 #easy-isp-title {
@@ -209,6 +210,13 @@ nav {
     }
     
     #main-content {
+    }
+
+    #notification-dropdown-menu {
+        min-width: 400px;   /* Desktop: desired width */
+        left: auto;         /* Desktop: override mobile 'left: 0;' */
+        right: 0;           /* Desktop: align right edge with notification-wrapper's right edge */
+        margin-right: 10px; /* Desktop: pull dropdown 10px left from its right alignment */
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

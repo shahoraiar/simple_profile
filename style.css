@@ -25,6 +25,13 @@ nav {
     padding: 20px 15px;
 }
 
+#sidebar-menu-title {
+    font-size: 0.8em;   /* Make it smaller than default h5 */
+    font-weight: bold;  /* Retain title-like appearance */
+    /* mb-2 class in HTML will handle bottom margin.
+       If more specific margin is needed, it can be added here. */
+}
+
 #main-content {
     padding: 0 15px 20px 15px; /* top, right, bottom, left */
 }

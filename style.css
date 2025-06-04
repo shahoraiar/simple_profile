@@ -232,6 +232,11 @@ nav {
     /* Add padding if the clickable area needs to be larger than the text/arrow itself */
 }
 
+/* Full height layout for the row containing sidebar and main content */
+.container-fluid > .row {
+    min-height: calc(100vh - 60px); /* 60px is the body padding-top for the navbar */
+}
+
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */
     #easy-isp-title {
         font-size: 1.1rem; /* Reduce font size from 1.4rem */
@@ -292,14 +297,24 @@ nav {
 
     #sidebar {
         position: static; /* Revert to normal flow */
+<<<<<<< HEAD
         height: 100%; /* Full height of parent (.main-page-container) */
         transform: none; /* No translation */
         display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
+=======
+        height: 100%; /* Make sidebar take full height of parent row */
+        width: auto !important; /* Force Bootstrap column width */
+        transform: none; /* No translation */
+        display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
+        /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */
+        min-width: 320px; /* wider than Bootstrap's default */
+>>>>>>> 3d6ca80373eaea49c879b2ad57645191508bf808
         max-width: 100%;  /* don’t limit max size */
     }
     
     #main-content {
+<<<<<<< HEAD
         height: 100%;
         overflow-y: auto;
     }
@@ -314,6 +329,21 @@ nav {
         left: auto;         /* Desktop: override mobile 'left: 0;' */
         right: 0;           /* Desktop: align right edge with notification-wrapper's right edge */
         margin-right: 10px; /* Desktop: pull dropdown 10px left from its right alignment */
+=======
+        height: 100%; /* Make main content take full height of parent row */
+        display: flex;
+        flex-direction: column;
+    }
+
+    #main-content > .row {
+        display: flex; /* Ensure it behaves as a flex container for columns */
+        flex-grow: 1; /* Allow this row to take up space in the flex column of main-content */
+    }
+
+    #main-content > .row > [class*="col-"] {
+        display: flex; /* Make the column a flex container */
+        flex-direction: column; /* Align items inside column vertically */
+>>>>>>> 3d6ca80373eaea49c879b2ad57645191508bf808
     }
 
     /* Ensure mobile-specific visibility class doesn't affect desktop */

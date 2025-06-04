@@ -55,6 +55,7 @@ nav {
     list-style-type: none; /* Ensures no bullets, though .nav should handle this */
     /* padding-left will be handled by ms-3 class in HTML for now */
     margin-left: 27px; /* Align border with parent text */
+    margin-top: 0px;   /* Reduce space above sub-menu */
 }
 
 #sidebar .sub-menu .nav-link {

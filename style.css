@@ -41,7 +41,7 @@ nav {
 
 .demu-toggle {
   display: flex; /* Helps align icon and text */
-  justify-content: space-between; /* Pushes icon to the end if not using float */
+  justify-content: flex-start; /* Align items to the start */
   align-items: center;
 }
 
@@ -50,9 +50,22 @@ nav {
   margin-left: 5px; /* Adds a little space if it's not floated */
 }
 
+.demu-submenu {
+  /* The ms-3 bootstrap class provides margin-left: 1rem.
+     We can add a bit more margin if needed, or a background.
+     Let's add a slightly different background to the submenu container. */
+  background-color: #f0f0f0; /* Light gray background for the sub-menu block */
+  border-radius: 4px; /* Optional: rounded corners for the sub-menu block */
+  margin-top: 5px; /* Space between parent item and sub-menu block */
+}
+
 .demu-submenu .nav-link {
   font-size: 0.85rem; /* Slightly smaller than main sidebar links */
-  padding-left: 10px; /* Adjust padding as needed */
+  padding-left: 25px; /* Increased indentation */
+  border-left: 3px solid #007bff; /* Visual marker */
+  margin-left: 5px; /* To space out the border from parent highlight */
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #settings-dropdown-menu li {
@@ -282,12 +295,15 @@ nav {
 
 @media (min-width: 768px) { /* For desktop/tablet landscape view */
     #easy-isp-title {
-        flex: 0 0 25%; /* flex-grow, flex-shrink, flex-basis (25% for col-md-3 equivalent) */
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        /* Potentially add padding if needed, e.g., padding-right to ensure some space if container has none */
-        /* However, the parent container-fluid already has padding. */
+        /* The hamburger icon's margin might need adjustment if it's not positioned correctly.
+           The original style.css had:
+           #easy-isp-title .hamburger-icon { margin-left: 200px; }
+           This was later changed to 0px. We might need to re-evaluate this based on visual output.
+           For now, let's keep the hamburger-icon margin at 0 as per the latest version,
+           and see if just changing #easy-isp-title is enough.
+        */
     }
 
 .card {

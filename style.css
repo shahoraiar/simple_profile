@@ -16,7 +16,7 @@ nav {
 }
 
 #sidebar {
-    background-color: #f8f9fa !important; /* Re-asserting with !important, or use #ffffff for plain white */
+    background-color: #ffffff !important; /* Re-asserting with !important, or use #ffffff for plain white */
     opacity: 1 !important; /* Ensure it's fully opaque */
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
@@ -26,6 +26,7 @@ nav {
 
 #main-content {
     padding: 0 15px 20px 15px; /* top, right, bottom, left */
+    background-color: #f8f9fa;
 }
 
 #sidebar .nav-link {

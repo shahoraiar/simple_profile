@@ -26,6 +26,7 @@ nav {
 
 #main-content {
     padding: 0 15px 20px 15px; /* top, right, bottom, left */
+    background-color: #f8f9fa;
 }
 
 #sidebar .nav-link {

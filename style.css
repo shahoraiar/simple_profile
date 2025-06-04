@@ -54,6 +54,7 @@ nav {
 #sidebar .sub-menu {
     list-style-type: none; /* Ensures no bullets, though .nav should handle this */
     /* padding-left will be handled by ms-3 class in HTML for now */
+    margin-left: 20px; /* Added for further indentation */
 }
 
 #sidebar .sub-menu .nav-link {

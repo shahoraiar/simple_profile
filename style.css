@@ -9,7 +9,8 @@ body {
 nav {
     background: linear-gradient(90deg, #007bff, #00bfff);
     color: white;
-    padding: 10px 20px; /* Default padding */
+    padding-top: 10px;
+    padding-bottom: 10px;
     position: relative; /* Needed for z-index to take effect */
     z-index: 1045;      /* Higher than mobile sidebar (1040) and backdrop (1039) */
 }
@@ -20,6 +21,10 @@ nav {
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
     /* min-height: 100vh; Removed for natural height in flex row */
+    padding: 20px 15px;
+}
+
+#main-content {
     padding: 20px 15px;
 }
 

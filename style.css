@@ -102,11 +102,7 @@ nav {
 }
 
 #easy-isp-title .hamburger-icon {
-<<<<<<< HEAD
-    margin-left: 200px; /* Adjust this value as needed for desired spacing */
-=======
     margin-left: 0; /* Adjust this value as needed for desired spacing */
->>>>>>> dae189709ad9d1ed8a97480b9447c99da1996cea
 }
 
 .countdown-circle-value {
@@ -209,7 +205,7 @@ nav {
 
 /* Pay Bill Button Specific Colors */
 .pay-bill-button .button-upper-part {
-    background-color: #ff8a07f2; /* Lighter blue */
+    background-color: #2a18eaf2; /* Lighter blue */
 }
 .pay-bill-button .button-upper-part .plus-icon-large {
     color: #ffffff; /* White plus icon */
@@ -230,11 +226,11 @@ nav {
     color: #ffffff; /* Dark plus icon for contrast on light yellow */
 }
 .create-ticket-button .button-lower-part {
-    background-color: #ff8a07f2; /* Bootstrap warning yellow/orange */
+    background-color: #2a18eaf2; /* Bootstrap warning yellow/orange */
 }
 .create-ticket-button .button-lower-part .original-icon,
 .create-ticket-button .button-lower-part .button-text-main {
-    color: #333333; /* Dark icon and text for contrast on yellow */
+    color: #ffffff; /* Dark icon and text for contrast on yellow */
 }
 
 .menu-icon {
@@ -276,6 +272,10 @@ nav {
 
 #toggle-password-visibility:hover .password-toggle-icon {
     opacity: 0.7; /* Slight visual feedback on hover */
+}
+
+.border-7{
+    border-width: 6px !important;
 }
 
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */

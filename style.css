@@ -4,6 +4,7 @@ body {
     margin: 0;
     /* padding: 0; Original padding, overridden by padding-top */
     padding-top: 60px; /* Adjust this value based on the actual height of the navbar */
+    background-color: #dee4eb;
 }
 
 nav {
@@ -16,12 +17,19 @@ nav {
 }
 
 #sidebar {
-    background-color: #f8f9fa !important; /* Re-asserting with !important, or use #ffffff for plain white */
+    background-color: #ffffff !important; /* Re-asserting with !important, or use #ffffff for plain white */
     opacity: 1 !important; /* Ensure it's fully opaque */
     z-index: 1020; /* Standard z-index for side content */
     color: #212529;
-    /* min-height: 100vh; Removed for natural height in flex row */
+    min-height: 100vh; /* Removed for natural height in flex row */
     padding: 20px 15px;
+}
+
+#sidebar-menu-title {
+    font-size: 0.8em;   /* Make it smaller than default h5 */
+    font-weight: bold;  /* Retain title-like appearance */
+    /* mb-2 class in HTML will handle bottom margin.
+       If more specific margin is needed, it can be added here. */
 }
 
 #main-content {
@@ -36,6 +44,29 @@ nav {
 #sidebar .nav-link:hover {
     background-color: #e2e6ea;
     border-radius: 5px;
+}
+
+#sidebar .nav-link .toggle-icon {
+    font-weight: bold;
+    /* Basic styling, can be enhanced */
+}
+
+#sidebar .sub-menu {
+    list-style-type: none; /* Ensures no bullets, though .nav should handle this */
+    /* padding-left will be handled by ms-3 class in HTML for now */
+    margin-top: 0px;   /* Reduce space above sub-menu */
+}
+
+#sidebar .sub-menu .nav-link {
+    margin-left: 33px;    /* As per user specification */
+    border-left: 3px solid blue;
+    /* Ensure it doesn't pick up the main #sidebar .nav-link padding if that one is too generic */
+    padding: 8px 12px; /* Restored to standard padding */
+}
+
+#sidebar .sub-menu .nav-link:hover {
+    background-color: #e2e6ea; /* Keep hover background consistent */
+    border-radius: 0;      /* Remove border radius for sub-items */
 }
 
 #settings-dropdown-menu li {
@@ -71,11 +102,7 @@ nav {
 }
 
 #easy-isp-title .hamburger-icon {
-<<<<<<< HEAD
-    margin-left: 200px; /* Adjust this value as needed for desired spacing */
-=======
     margin-left: 0; /* Adjust this value as needed for desired spacing */
->>>>>>> dae189709ad9d1ed8a97480b9447c99da1996cea
 }
 
 .countdown-circle-value {
@@ -104,6 +131,23 @@ nav {
 #profile-section,
 #remaining-balance-section {
     height: 100%;
+    background-color: #ffffff !important;
+}
+
+#profile-section .profile-details {
+    display: inline-block; /* Allows centering by parent's text-center */
+    text-align: left;    /* Keeps content within this block left-aligned */
+    /* Optional: Add a width if inline-block doesn't size as expected,
+       but usually it sizes to its content. e.g., width: auto; or a specific max-width */
+    /* Add margin-top if needed to space it from the image, e.g., margin-top: 1rem; */
+}
+
+.profile-item-label {
+    font-weight: bold;
+    margin-right: 0.5rem; /* Space between label and value */
+    white-space: nowrap;  /* Prevent label from wrapping */
+    /* Optional: Define a fixed width if you want all labels to align vertically
+       e.g., width: 80px; text-align: right; or use Bootstrap grid for more complex layouts */
 }
 
 .two-part-button {
@@ -161,7 +205,7 @@ nav {
 
 /* Pay Bill Button Specific Colors */
 .pay-bill-button .button-upper-part {
-    background-color: #ff8a07f2; /* Lighter blue */
+    background-color: #2a18eaf2; /* Lighter blue */
 }
 .pay-bill-button .button-upper-part .plus-icon-large {
     color: #ffffff; /* White plus icon */
@@ -182,11 +226,11 @@ nav {
     color: #ffffff; /* Dark plus icon for contrast on light yellow */
 }
 .create-ticket-button .button-lower-part {
-    background-color: #ff8a07f2; /* Bootstrap warning yellow/orange */
+    background-color: #2a18eaf2; /* Bootstrap warning yellow/orange */
 }
 .create-ticket-button .button-lower-part .original-icon,
 .create-ticket-button .button-lower-part .button-text-main {
-    color: #333333; /* Dark icon and text for contrast on yellow */
+    color: #ffffff; /* Dark icon and text for contrast on yellow */
 }
 
 .menu-icon {
@@ -214,6 +258,24 @@ nav {
     /* Ensures the text and arrow are baseline aligned if they wrap, and treated as a single clickable block */
     /* No specific flex needed if they are simple spans, they'll flow inline. */
     /* Add padding if the clickable area needs to be larger than the text/arrow itself */
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.password-toggle-icon {
+    display: inline-flex; /* Helps with alignment if needed */
+    align-items: center;  /* Vertically align if it's flex */
+    user-select: none;    /* Prevent text selection of the icon */
+}
+
+#toggle-password-visibility:hover .password-toggle-icon {
+    opacity: 0.7; /* Slight visual feedback on hover */
+}
+
+.border-7{
+    border-width: 6px !important;
 }
 
 @media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */
@@ -276,7 +338,7 @@ nav {
 
     #sidebar {
         position: static; /* Revert to normal flow */
-        height: auto; /* Allows content or flexbox to determine height */
+        /* height: auto; Allows content or flexbox to determine height */
         transform: none; /* No translation */
         display: block; /* Default display if not hidden by .d-none. Overrides mobile's display:block !important */
         /* z-index: auto; */ /* Base z-index:1020 is fine, or can be removed */

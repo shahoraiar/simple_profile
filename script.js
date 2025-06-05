@@ -167,3 +167,48 @@ document.body.addEventListener('click', function(event) {
         body.classList.remove('sidebar-overlay-active');
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (any existing code in DOMContentLoaded should be preserved)
+
+    const demuMenuTrigger = document.getElementById('demu-menu-trigger');
+    const demuSubMenu = document.getElementById('demu-sub-menu');
+
+    if (demuMenuTrigger && demuSubMenu) {
+        demuMenuTrigger.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            const toggleIcon = this.querySelector('.toggle-icon');
+
+            if (demuSubMenu.style.display === 'none' || demuSubMenu.style.display === '') {
+                demuSubMenu.style.display = 'block'; // Or 'flex' if it's a flex container, but nav flex-column suggests block is fine
+                if (toggleIcon) {
+                    toggleIcon.textContent = '-';
+                }
+            } else {
+                demuSubMenu.style.display = 'none';
+                if (toggleIcon) {
+                    toggleIcon.textContent = '+';
+                }
+            }
+        });
+    }
+
+    // ... (any other existing code in DOMContentLoaded)
+
+
+ const passwordText = document.getElementById('password-text');
+  const togglePassword = document.getElementById('toggle-password');
+
+//   const realPassword = "{{ password|escapejs }}";  // Injected from Django safely
+  const realPassword = 1254645645;  // Injected from Django safely
+
+  let passwordShown = false;
+
+  togglePassword.addEventListener('click', () => {
+    passwordShown = !passwordShown;
+    passwordText.textContent = passwordShown ? realPassword : '••••••••••';
+    togglePassword.textContent = passwordShown ? '🔒' : '👁️';
+  });
+
+});
